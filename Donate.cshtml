@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Donate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script>
+function insRow(id) {
+    var newContent = document.getElementById("myTable").rows.length;
+    var x = document.getElementById(id).insertRow(newContent);
+    var y0 = x.insertCell(0);
+    var y1 = x.insertCell(1);
+    var y2 = x.insertCell(2);
+    var y3 = x.insertCell(3);
+    y0.innerHTML = '<input type="text" id="txtContents">';
+    y1.innerHTML = '<input type="text" id="txtQuantity">';
+    y2.innerHTML = '<input type="text" id="txtScale">';
+    y3.innerHTML = '<select id="QualitySelect"> <option>Good</option> <option>Average</option> <option>Bad</option> </select>';
+}
+</script>
+<body>
+    <h2>Donate</h2>
+
+        <table id="myTable" cellpadding="10">
+            <tr>
+                <th>Contents:  </th> 
+                <th>Quantity:  </th> 
+                <th>UnitScale: </th>
+                <th>Quality:   </th>
+            </tr>
+            <tr>
+                <td><input type="text" id="txtContents"></td> 
+                <td><input type="text" id="txtQuantity"></td>
+                <td><input type="text" id="txtScale"></td>
+                <td><select id="QualitySelect">
+                    <option>Good</option>
+                    <option>Average</option>
+                    <option>Bad</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <p>
+            <input type="button" onclick="insRow('myTable')" value="Insert row">
+        </p>
+    <div>
+        <table cellpadding="30">
+            <tr>
+                <th><input id="btnAdd" type="button" value="Add to Donations" /></th>
+                <th><input id="btnCancel" type="button" value="Cancel" onclick="window.location.href = 'Home'"/></th>
+            </tr>
+        </table>
+
+
+         
+    </div>
+    </body>
+
+
